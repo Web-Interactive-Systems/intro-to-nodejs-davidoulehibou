@@ -5,3 +5,5 @@
  - add `nodemon` as a dev dependency
  - add a script `yarn dev` to run the main file using nodemon
  */
+
+ console.log('test');

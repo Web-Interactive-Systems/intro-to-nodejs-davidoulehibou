@@ -7,11 +7,22 @@
  - Use readFile of fs module to read nameFile
  */
 
-const fs = require("fs");
+ const fs = require("fs");
 
-const filename = process.argv; // Todo;
-const text = process.argv; // Todo;
 
-// Todo writeFile
+ const filename = process.argv[2]; 
+ const text = process.argv[3]; 
+ 
+console.log(text);
+ 
 
-// Todo readFile
+ fs.writeFile(filename, text, (err) => {
+
+   console.log(`Le texte a été écrit dans ${filename}`);
+ 
+
+ });
+
+ fs.readFile(filename, "utf8", (err, data) => {
+    console.log(`Contenu du fichier ${filename} :\n${data}`);
+  });
