@@ -5,13 +5,15 @@
  ./utils/constants.js and ./utils/helpers.js
  */
 
+ const os = require('os');
+
 const _os = {
-  name: os.type(),
-  release: os.release(),
-  totalMem: os.totalmem(),
-  freeMem: os.freemem(),
+  name: os.type(), //Le nom de l'os
+  release: os.release(), //La version de l'OS
+  totalMem: os.totalmem(), // La valeur totale de la memoire??
+  freeMem: os.freemem(), // La valeur libre de la memoire??
   uptime: os.uptime(),
-  user: os.userInfo(),
+  user: os.userInfo(), // des info sur l'utilisateur
 };
 
 console.log(_os);

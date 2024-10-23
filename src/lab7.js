@@ -3,20 +3,25 @@
  - 
  */
 
-const EventEmitter = require("events");
+ const EventEmitter = require("events");
 
-// Todo use EventEmitter
-//
+ 
+ const myEmitter = new EventEmitter();
+ 
+ 
+ myEmitter.on('dataReceived', (data, token) => {
+   console.log(`Message reçu ${JSON.stringify(data, null, 2)} with token: ${token}`);
+ });
+ 
+ 
+ myEmitter.on('dataReceived', () => {
+   console.log("chepa");
+ });
+ 
 
-// Todo: write listener 1 that logs the following, `data` and `token` are emitted
-console.log(
-  `Recieved payload ${JSON.stringify(data, null, 2)} with token: ${token}`
-);
-
-// Todo: write listener 2 that logs the following
-console.log("A second listener as well");
-
-setInterval(() => {
-  // Todo: write an emitter based listener 1
-  //
-}, 2000);
+ setInterval(() => {
+   const data = { message: "Hello World", timestamp: new Date() };
+   const token = "123456";
+   
+   myEmitter.emit('dataReceived', data, token);
+ }, 2000);

@@ -8,3 +8,8 @@
  */
 
 const path = require("path");
+
+console.log("\n\n *** path dirname", path.dirname(__dirname));
+console.log("\n\n *** path join", path.join(__dirname, "toto", "labx.js"));
+
+console.log("\n\n *** path basename", path.basename(path.join(__dirname, "toto", "labx.js"),"js"));

@@ -9,3 +9,23 @@
   - console.log process
   - console.log window
  */
+
+  function displayInfoAfterDelay() {
+    setTimeout(() => {
+      const elements = ['toto', 'tata', 'titi'];
+      console.table(elements);
+  
+      console.log('__dirname:', __dirname);
+  
+      console.log('__filename:', __filename);
+  
+      console.log('require:', require);
+  
+      console.log('module:', module);
+  
+      console.log('process:', process.env);
+  
+    }, 3000);
+  }
+
+  displayInfoAfterDelay();
